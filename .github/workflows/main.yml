@@ -27,6 +27,6 @@ jobs:
       
       - name: Create the package
         run: dotnet pack --configuration Release --output ./nupkg   
-        
+
       - name: Publish the package
-        run: nuget push ./nupkg/*.nupkg -Source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push MoneyExtension\bin\Release\*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json

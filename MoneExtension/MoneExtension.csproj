@@ -4,6 +4,22 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>MoneExtensiondd</PackageId>
+    <License>MIT</License>
+    <Version>1.0.0</Version>
+    <Authors>your-name</Authors>
+    <Company>your-company</Company>
+    <PackageDescription>Extension methods for money operations.</PackageDescription>
+    <Description>Extension easy.</Description>
+    <PackageProjectUrl>https://github.com/luancalmeida/MoneyExtensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/luancalmeida/MoneyExtensions.git</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>money;extensions;decimal;cents</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ReleaseNotes>Initial release.</ReleaseNotes>
+    <Title>MoneExtension</Title>
+
+
   </PropertyGroup>
 
 </Project>
