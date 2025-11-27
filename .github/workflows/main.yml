@@ -1,32 +1,31 @@
 name: Build and deploy
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v4
 
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
         with:
-            dotnet-version: 9.0.x
+          dotnet-version: 9.0.x
 
       - name: Restore dependencies
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test --no-build --configuration Release --verbosity normal
+        run: dotnet test --configuration Release --no-build --verbosity normal
       
       - name: Create the package
-        run: dotnet pack --configuration Release --output ./nupkg   
+        run: dotnet pack MoneExtension/MoneExtension.csproj --configuration Release --output ./nupkg
 
-      - name: Publish the package
-        run: dotnet nuget push MoneExtension/bin/Release/*.nupkg -k ${{ secrets.NUGET_TOKEN }} -s https://api.nuget.org/v3/index.json
+      - name: Publish NuGet package
+        run: dotnet nuget push "./nupkg/*.nupkg" --api-key "${{ secrets.NUGET_KEY }}" --source "https://api.nuget.org/v3/index.json"

@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>MoneExtensiondd</PackageId>
+   <PackageId>MoneyExtension</PackageId>  
     <License>MIT</License>
     <Version>1.0.0</Version>
     <Authors>your-name</Authors>
